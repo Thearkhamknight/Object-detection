@@ -2,7 +2,7 @@
 This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the github username Yuki678.
 I merely modified a few scripts to make it more compatible so it can be run uninterrupted and smoothly.
 The original README file created by Mr. Takahashi is in driving-object-detection.
-Also inside Mr. Takahashi's driving-object-detection is a requirements text file and a setup environment script 'setup_env.sh;.
+Also inside Mr. Takahashi's driving-object-detection repository is a requirements text file and a setup environment script 'setup_env.sh'.
  Many of the scripts used to run this notebook are copyrighted by the Tensorflow authors and licensed under the Apache License, Version 2.0 (the "License").
 A copy of the license can be obtained at 
 http://www.apache.org/licenses/LICENSE-2.0
@@ -28,11 +28,11 @@ item {
     name: 'parrot'
 }
 The commands are configured for the Ubuntu/Debian OS so change them as you see fit. 
-Finally run this notebook until cell 19. Cell 19 is where the pipeline.config file is displayed. 
+Run this notebook until cell 19. Cell 19 is where the pipeline.config file is displayed. 
 
 Finally open the pipeline.config file.
 In my workspace the configuration file is under Object-detection/driving-object-detection/models/tf2/my_centernet_resnet50_v1_fpn. The folder after tf2 will depend on what model you choose to train on.
-This is what my pipeline.config file is, I will specify what changes to make inside the configuration file.
+This is what my pipeline.config file is, I will specify what changes to make inside the configuration file. After making these changes, make sure to save the pipeline.config file.
 # CenterNet meta-architecture from the "Objects as Points" [1] paper
 # with the ResNet-v2-101 backbone. The ResNet backbone has a few differences
 # as compared to the one mentioned in the paper, hence the performance is
@@ -140,7 +140,8 @@ train_config: {
   max_number_of_boxes: 3
   unpad_groundtruth_tensors: false
 
-  fine_tune_checkpoint_version: V2 #In fine_tune_checkpoint below, specify the full checkpoint file path. Object-detection/models/research/pretrained_model/checkpoint/ckpt-0 should stay the same but include any preceding directories
+  fine_tune_checkpoint_version: V2 #In fine_tune_checkpoint below, specify the full checkpoint file path. 
+  Object-detection/models/research/pretrained_model/checkpoint/ckpt-0 should stay the same but include any preceding directories
   fine_tune_checkpoint: "/home/faizan_samad/testing/Object-detection/models/research/pretrained_model/checkpoint/ckpt-0" #Specify the full file path.
   fine_tune_checkpoint_type: "detection" #Make sure the checkpoint type is detection
 }
