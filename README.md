@@ -8,7 +8,7 @@ A copy of the license can be obtained at
 http://www.apache.org/licenses/LICENSE-2.0
 
 Instructions:
-This notebook uses transfer learning, using models pretrained on the Coco dataset. All cells in this notebook can be run at once, but first you need to make a few changes and run until cell 12, before running all cells. Then save the changes and you should be able to run this notebook uninterrupted without further manual intervention.
+This notebook uses transfer learning, using models pretrained on the Coco dataset. 
 If you would like to use your own images then inside driving-object-detection/images, delete all the images of traffic lights and the xml files. 
 Upload your own images. Then label them in the object-detection bounding box format using  LabelImg and upload their respective xml files. The files are saved in PASCAL VOC format. 
 Here is a link on how to install LabelImg https://github.com/tzutalin/labelImg#installation.
