@@ -1,6 +1,6 @@
 # Object-detection
 This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the github username Yuki678.
-I merely modified a few scripts to make it more compatible so it can be run uninterrupted and smoothly.
+I merely modified a few scripts to make it more compatible so it can be run more smoothly.
 The original README file created by Mr. Takahashi is in driving-object-detection.
 Also inside Mr. Takahashi's driving-object-detection repository is a requirements text file and a setup environment script 'setup_env.sh'.
  Many of the scripts used to run this notebook are copyrighted by the Tensorflow authors and licensed under the Apache License, Version 2.0 (the "License").
