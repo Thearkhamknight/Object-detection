@@ -10,7 +10,8 @@ http://www.apache.org/licenses/LICENSE-2.0
 Instructions:
 This notebook uses transfer learning, using models pretrained on the Coco dataset. All cells in this notebook can be run at once, but first you need to make a few changes and run until cell 12, before running all cells. Then save the changes and you should be able to run this notebook uninterrupted without further manual intervention.
 If you would like to use your own images then inside driving-object-detection/images, delete all the images of traffic lights and the xml files. 
-Upload your own images. Then label them in the object-detection bounding box format using  LabelImg. The files are saved in PASCAL VOC format. 
+Upload your own images. Then label them in the object-detection bounding box format using  LabelImg and upload their respective xml files. The files are saved in PASCAL VOC format. 
+Here is a link on how to install LabelImg https://github.com/tzutalin/labelImg#installation.
 Next go inside driving-object-detection/annotations and change the label_map.pbtxt file to fit your dataset. 
 For example, if you are trying to detect animals you would change it to:
 item {
@@ -27,7 +28,7 @@ item {
     id: 3
     name: 'parrot'
 }
-The commands are configured for the Ubuntu/Debian OS so change them as you see fit. 
+The commands are configured for the Debian OS so change them as you see fit. 
 Run this notebook until cell 19. Cell 19 is where the pipeline.config file is displayed. 
 
 Finally open the pipeline.config file.
