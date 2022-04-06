@@ -2,18 +2,23 @@
 This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the github username Yuki678.
 I merely modified a few scripts to make it more compatible so it can be run more smoothly.
 The original README file created by Mr. Takahashi is in driving-object-detection.
+
 Also inside Mr. Takahashi's driving-object-detection repository is a requirements text file and a setup environment script 'setup_env.sh'.
  Many of the scripts used to run this notebook are copyrighted by the Tensorflow authors and licensed under the Apache License, Version 2.0 (the "License").
 A copy of the license can be obtained at 
 http://www.apache.org/licenses/LICENSE-2.0
 
-Instructions:
+## Instructions:
 This notebook uses transfer learning, using models pretrained on the Coco dataset. 
 If you would like to use your own images then inside driving-object-detection/images, delete all the images of traffic lights and the xml files. 
 Upload your own images. Then label them in the object-detection bounding box format using  LabelImg and upload their respective xml files. The files are saved in PASCAL VOC format. 
+
 Here is a link on how to install LabelImg https://github.com/tzutalin/labelImg#installation.
+
 Next go inside driving-object-detection/annotations and change the label_map.pbtxt file to fit your dataset. 
 For example, if you are trying to detect animals you would change it to:
+
+```
 item {
     id: 1
     name: 'dog'
@@ -28,12 +33,17 @@ item {
     id: 3
     name: 'parrot'
 }
+```
+
 The commands are configured for the Debian OS so change them as you see fit. 
+
 Run this notebook until cell 19. Cell 19 is where the pipeline.config file is displayed. 
 
-Finally open the pipeline.config file.
+Finally, open the pipeline.config file.
 In my workspace the configuration file is under Object-detection/driving-object-detection/models/tf2/my_centernet_resnet50_v1_fpn. The folder after tf2 will depend on what model you choose to train on.
 This is what my pipeline.config file is, I will specify what changes to make inside the configuration file. After making these changes, make sure to save the pipeline.config file.
+
+```
 # CenterNet meta-architecture from the "Objects as Points" [1] paper
 # with the ResNet-v2-101 backbone. The ResNet backbone has a few differences
 # as compared to the one mentioned in the paper, hence the performance is
@@ -168,5 +178,6 @@ eval_input_reader: {
     input_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/test.record" #Specify the full file path. Change preceding directories before Object-detection.
   }
 }
+```
 
 
