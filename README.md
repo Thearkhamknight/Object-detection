@@ -179,5 +179,6 @@ eval_input_reader: {
   }
 }
 ```
-
+#Aside:
+TF_exec_doc_inference.ipynb is a notebook I used to train this model on recognizing different fields within a variety of documents. If you would like to test this model on documents you can run that notebook. I already updated the pipeline.config file for documents and have labeled training and testing data in csv format. The images and annotations for the documents are in driving-object-detection under the folders "Annotations" and "Images".
 
