@@ -11,7 +11,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 ## Instructions:
 This notebook uses transfer learning, using models pretrained on the Coco dataset. 
 If you would like to use your own images then inside driving-object-detection/images, delete all the images of traffic lights and the xml files. 
-Upload your own images. Then label them in the object-detection bounding box format using  LabelImg and upload their respective xml files. The files are saved in PASCAL VOC format. 
+Upload your own images. Then label them in the object-detection bounding box format using  LabelImg and upload the images as well as their respective xml files. The xml files are saved in PASCAL VOC format. 
 
 Here is a link on how to install LabelImg https://github.com/tzutalin/labelImg#installation.
 
