@@ -41,7 +41,7 @@ item {
 Finally, open the pipeline.config file.
 The pipeline.config file is the only file where you will have to specify full absolute paths for your workspace.
 In my workspace the configuration file is under Object-detection/driving-object-detection/models/tf2/my_centernet_resnet50_v1_fpn. The folder after tf2 will depend on what model you choose to train on.
-This is what my pipeline.config file is, I will specify what changes to make inside the configuration file. After making these changes, make sure to save the pipeline.config file.
+This is what my pipeline.config file is, and I will specify what changes to make inside the configuration file. After making these changes, make sure to save the pipeline.config file.
 
 ```
 # CenterNet meta-architecture from the "Objects as Points" [1] paper
