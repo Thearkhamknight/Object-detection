@@ -14,8 +14,8 @@ The installation is for this Object Detection API is fairly straightforward. Mak
 
 ## Instructions:
 This notebook uses transfer learning, using models pretrained on the Coco dataset. 
-If you would like to use your own images then after cloning driving-object-detection, navigate to driving-object-detection/images, delete all the images of traffic lights and the xml files. 
-Upload your own images. Then label them in the object-detection bounding box format using LabelImg in PASCAL VOC format and upload their respective xml files. Make sure the xml files have the exact same name as the image files, with the exception of the file extension. Ensure that the bounding box xml annotation files are in PASCAL VOC format, as this is necessary for the model to be trained properly. The notebook will partition the images into a training and test set, convert the xml files in each set into a single csv file, and finally convert the csv file into a tf.record file for training and evaluation. 
+If you would like to use your own images, then after cloning the driving-object-detection repository, navigate to driving-object-detection/images, delete all the images of traffic lights and the xml files. 
+Upload your own images to driving-object-detection/images. Then label them in the object-detection bounding box format using LabelImg in PASCAL VOC format and upload their respective xml files inside the same directory. Make sure the xml files have the exact same name as the image files, with the exception of the file extension. Ensure that the bounding box xml annotation files are in PASCAL VOC format, as this is necessary for the model to be trained properly. The notebook will partition the images into a training and test set, convert the xml files in each set into a single csv file, and finally convert the csv file into a tf.record file for training and evaluation. 
 
 Here is a link on how to install LabelImg https://github.com/tzutalin/labelImg#installation.
 
