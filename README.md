@@ -9,11 +9,11 @@ A copy of the license can be obtained at
 http://www.apache.org/licenses/LICENSE-2.0
 
 ## Installation:
-The installation is for this Object Detection API is fairly straightforward. Make sure you have Python and Jupyter Notebook installed in your work space. This Object Detection notebook will also clone the driving-object-detection and Ex_Scripts repositories to your work space so ensure that you have enough memory. One thing I would like to note is that the terminal commands are for the Debian OS so you will have to change some of them to fit your OS. After cloning the driving-object-detection repository, open the README.MD file within that repository for more information on how to add additional models, converting the exported model to earlier versions of Tensorflow, and increase inference speed.
+The installation is for this Object Detection API is fairly straightforward. Make sure you have Python and Jupyter Notebook installed in your work space in order to run this notebook. This Object Detection notebook will also clone the driving-object-detection and Ex_Scripts repositories to your work space so ensure that you have enough memory. One thing I would like to note is that some of the terminal commands are specific to the Debian OS, therefore you will have to change some of them to fit your OS. After cloning the driving-object-detection repository, open the README.MD file within that repository for more information on how to add additional models, convert the exported model to earlier versions of Tensorflow, and increase inference speed.
 
 
 ## Instructions:
-This notebook uses transfer learning, using models pretrained on the Coco dataset. All the changes you will make will come after cell 18, which is where you clone the driving-object-detection and Ex_Scripts repositories. For your reference, this is what cell 18 is: 
+This notebook uses transfer learning, using models pretrained on the Coco dataset. Most of the significant changes you will make will come after cell 18, which is where you clone the driving-object-detection and Ex_Scripts repositories. For your reference, this is what cell 18 is: 
 ```
 # This cell clones all the content from the original driving object detection repository into the repository directory path.
 # It also checks that the label map and pipeline files exist.
