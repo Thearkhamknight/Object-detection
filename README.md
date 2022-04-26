@@ -13,7 +13,40 @@ The installation is for this Object Detection API is fairly straightforward. Mak
 
 
 ## Instructions:
-This notebook uses transfer learning, using models pretrained on the Coco dataset. All the changes you will make will come after cell 18, which is where you clone the driving-object-detection and Ex_Scripts repositories.
+This notebook uses transfer learning, using models pretrained on the Coco dataset. All the changes you will make will come after cell 18, which is where you clone the driving-object-detection and Ex_Scripts repositories. For your reference, this is what cell 18 is: 
+'''
+# This cell clones all the content from the original driving object detection repository into the repository directory path.
+# It also checks that the label map and pipeline files exist.
+# I added the line: os.makedirs(model_dir, exist_ok=True). after cloning  and pulling the repositories. 
+# This ensures that a training sub folder will be created.
+# The original clone command is !git clone {repo_url}
+# Since the repository is public you will not be prompted to give your github username and password.
+# But if you are prompted here is what you should do.
+
+# Instead of !git clone {repo_url} type the command:
+# !git clone https://<Username>:<Password>@github.com/yuki678/driving-object-detection.git
+# Change the directory to fit your workspace.
+import os
+%cd ./
+# Clean up
+
+!rm -rf {repo_dir_path}
+
+# Clone
+
+!git clone https://github.com/Thearkhamknight/driving-object-detection.git
+!git clone https://github.com/Thearkhamknight/Ex_Scripts.git
+# !git clone {repo_url} 
+# Pull (just in case the repo already exists)
+%cd {repo_dir_path}
+!git pull
+
+# Check if label map and pipeline files exist
+assert os.path.isfile(label_map_pbtxt_fname), '`{}` not exist'.format(label_map_pbtxt_fname)
+assert os.path.isfile(pipeline_fname), '`{}` not exist'.format(pipeline_fname)
+os.makedirs(model_dir, exist_ok=True)
+ 
+ '''
 If you would like to use your own images, then after cloning the driving-object-detection repository, navigate to driving-object-detection/images, delete all the images of traffic lights and the xml files. 
 Upload your own images to driving-object-detection/images. Then label them in the object-detection bounding box format using LabelImg in PASCAL VOC format and upload their respective xml files inside the same directory. Make sure the xml files have the exact same name as the image files, with the exception of the file extension. Ensure that the bounding box xml annotation files are in PASCAL VOC format, as this is necessary for the model to be trained properly. The notebook will partition the images into a training and test set, convert the xml files in each set into a single csv file, and finally convert the csv file into a tf.record file for training and evaluation. 
 
