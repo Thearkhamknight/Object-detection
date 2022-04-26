@@ -1,12 +1,7 @@
 # Object-detection
-This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the github username Yuki678.
-I merely modified a few scripts to make it more compatible so it can be run more smoothly.
-The original README file created by Mr. Takahashi is in driving-object-detection.
+This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the github username Yuki678.I merely modified a few scripts to make it more compatible so it can be run more smoothly. For more information see the end of this README.
 
-Also inside Mr. Takahashi's driving-object-detection repository is a requirements text file and a setup environment script 'setup_env.sh'.
- Many of the scripts used to run this notebook are copyrighted by the Tensorflow authors and licensed under the Apache License, Version 2.0 (the "License").
-A copy of the license can be obtained at 
-http://www.apache.org/licenses/LICENSE-2.0
+
 
 ## Installation:
 The installation is for this Object Detection API is fairly straightforward. Make sure you have Python and Jupyter Notebook installed in your work space in order to run this notebook. This Object Detection notebook will also clone the driving-object-detection and Ex_Scripts repositories to your work space so ensure that you have enough memory. One thing I would like to note is that some of the terminal commands are specific to the Debian OS, therefore you will have to change some of them to fit your OS. After cloning the driving-object-detection repository, open the README.MD file within that repository for more information on how to add additional models, convert the exported model to earlier versions of Tensorflow, and increase inference speed.
@@ -212,5 +207,10 @@ eval_input_reader: {
   }
 }
 ```
-
+Credit to Yuki Takahashi:
+The original README file created by Mr. Takahashi is in driving-object-detection.
+Also inside Mr. Takahashi's driving-object-detection repository is a requirements text file and a setup environment script 'setup_env.sh'.
+ Many of the scripts used to run this notebook are copyrighted by the Tensorflow authors and licensed under the Apache License, Version 2.0 (the "License").
+A copy of the license can be obtained at 
+http://www.apache.org/licenses/LICENSE-2.0
 
