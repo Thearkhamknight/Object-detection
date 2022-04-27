@@ -4,7 +4,9 @@ it more compatible so it can be run more smoothly. For more information see the 
 The objective is to use this Object Detection Model to detect objects in different classes within a set of images. For example, Mr. Takahashi trained this 
 model to detect red, yellow, and green traffic lights. I used this model to detect redactions, signatures, initials, and dates from a variety of
 documents. Note: When you run this notebook, you will be cloning two other repositories to your local work station, driving-object-detection and 
-Ex_Scripts. At the end, you will have the trained model exported inside the cloned driving-object-detection repository with the name trained_model.tar.gz. 
+Ex_Scripts. 
+
+At the end, you will have the trained model exported inside the cloned driving-object-detection repository with the name trained_model.tar.gz. 
 The evaluation cell, cell 31, will give you precise metrics on how your model performs. It will tell you the Average Precision and Average Recall 
 at different IOU thresholds and for different sizes of the output bounding boxes. Coco defines a small area as between 0 and 32^2 pixels, medium area as 
 between 32^2 pixels and 96^2 pixels, and large area as between 96^2 pixels and 1e5^2 pixels. (For more information on IOU and Average Precision, check 
@@ -12,7 +14,8 @@ out the links I provide at the end of this README.) Finally, the inference cell,
 performs on your test images.
 The model or detector will output the bounding boxes, the class that each bounding box belongs to, and the detection scores or probabilities for 
 each respective bounding box belonging to its class. This information will be visually superimposed on your test set images so you can verify visually
-how your model performs. You will be able to analyze how your model performs both numerically and visually.
+how your model performs. With the information provided by both the evaluation and inference cells, you will be able to analyze how your model performs 
+both numerically and visually.
 
 
 
