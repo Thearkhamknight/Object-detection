@@ -226,11 +226,13 @@ eval_config: {
 }
 
 eval_input_reader: {
-  label_map_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/label_map.pbtxt" #Specify the full file path. Change preceding directories before Object-detection.
+  label_map_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/label_map.pbtxt" #Specify the full file path. 
+  #Change preceding directories before Object-detection.
   shuffle: false
   num_epochs: 1
   tf_record_input_reader {
-    input_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/test.record" #Specify the full file path. Change preceding directories before Object-detection.
+    input_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/test.record" #Specify the full file path. 
+    #Change preceding directories before Object-detection.
   }
 }
 ```
