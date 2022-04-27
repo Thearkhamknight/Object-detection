@@ -30,6 +30,7 @@ This notebook uses transfer learning, using models pretrained on the Coco datase
 Before cloning the driving-object-detection and Ex_Scripts repositories, you will need to decide which model you would like to use. This occurs in cell 5.
 Here is the link for additional Tensorflow Object-Detection Models trained on Coco:
 https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md
+
 Most of the significant changes you will make will come after cell 18, which is where you clone the driving-object-detection and Ex_Scripts repositories. For your reference, this is what cell 18 is: 
 ```
 # This cell clones all the content from the original driving object detection repository into the repository directory path.
