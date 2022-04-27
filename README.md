@@ -3,11 +3,13 @@ This Tensorflow Object Detection API is the original creation of Yuki Takahashi,
 it more compatible so it can be run more smoothly. For more information see the end of this README.
 The objective is to use this Object Detection Model to detect objects in different classes within a set of images. For example, Mr. Takahashi trained this 
 model to detect red, yellow, and green traffic lights. I used this model to detect redactions, signatures, initials, and dates from a variety of
-documents. Note: When you run this notebook, you will be cloning two other repositories to your local work station, driving-object-detection and Ex_Scripts. At the end, you will have the train exported model inside the cloned driving-object-detection repository with the name trained_model.tar.gz. 
-The evaluation cell, cell 31, will give you precise metrics on how your model performs. It will tell you the Average Precision and Average Recall at 
+documents. Note: When you run this notebook, you will be cloning two other repositories to your local work station, driving-object-detection and 
+Ex_Scripts. At the end, you will have the trained model exported inside the cloned driving-object-detection repository with the name trained_model.tar.gz. 
+The evaluation cell, cell 31, will give you precise metrics on how your model performs. It will tell you the Average Precision and Average Recall 
 at different IOU thresholds and for different sizes of the output bounding boxes. Coco defines a small area as between 0 and 32^2 pixels, medium area as 
 between 32^2 pixels and 96^2 pixels, and large area as between 96^2 pixels and 1e5^2 pixels. (For more information on IOU and Average Precision, check 
-out the links I provide at the end of this README.) Finally, the inference cell will visually show you how well your model performs on your test images.
+out the links I provide at the end of this README.) Finally, the inference cell, which is the last cell, will visually show you how well your model 
+performs on your test images.
 The model or detector will output the bounding boxes, the class that each bounding box belongs to, and the detection scores or probabilities for 
 each respective bounding box belonging to its class. This information will be visually superimposed on your test set images so you can verify visually
 how your model performs. You will be able to analyze how your model performs both numerically and visually.
@@ -136,7 +138,7 @@ model {
 
 train_config: {
 
-  batch_size: 16 #
+  batch_size: 16 # Increase/Decrease this value depending on the available memory (Higher values require more memory and vice-versa)
   num_steps: 10000
 
   data_augmentation_options {
@@ -195,7 +197,7 @@ train_config: {
     }
     use_moving_average: false
   }
-  max_number_of_boxes: 3
+  max_number_of_boxes: 3 # This will have to match the maximum number of bounding boxes identified in a single image within the your entire image set. For example, if you identified that the maximum number of bounding boxes is 20, change this value to 20.
   unpad_groundtruth_tensors: false
 
   fine_tune_checkpoint_version: V2 # In fine_tune_checkpoint below, specify the full checkpoint file path. 
