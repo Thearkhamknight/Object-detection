@@ -4,7 +4,9 @@ it more compatible so it can be run more smoothly. For more information see the 
 The objective is, using models pretrained on the Coco Dataset, to use transfer learning with Tensorflow's Object Detection API to train a selected model 
 to detect objects in different classes within a set of images. For example, Mr. Takahashi trained this 
 model to detect red, yellow, and green traffic lights. I used this model to detect redactions, signatures, initials, and dates from a variety of
-documents. Note: When you run this notebook, you will be cloning two other repositories to your local work station, driving-object-detection and 
+documents. If you would like to see how this performed with my data, I included it as a binary asset in the release of this repository with this link:
+https://github.com/Thearkhamknight/Object-detection/releases/tag/v0.0-alpha . The name of the file is TF_exec_doc_inference.nbconvert.ipynb.
+Note: When you run this notebook, you will be cloning two other repositories to your local work station, driving-object-detection and 
 Ex_Scripts. 
 
 At the end, you will have the trained model exported inside the cloned driving-object-detection repository with the name trained_model.tar.gz. 
