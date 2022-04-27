@@ -1,7 +1,8 @@
 # Object-detection
 This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the github username Yuki678. I merely modified a few scripts to make 
 it more compatible so it can be run more smoothly. For more information see the end of this README.
-The objective is to use this Object Detection Model to detect objects in different classes within a set of images. For example, Mr. Takahashi trained this 
+The objective is, using models pretrained on the Coco Dataset, to use transfer learning with Tensorflow's Object Detection API to train a selected model 
+to detect objects in different classes within a set of images. For example, Mr. Takahashi trained this 
 model to detect red, yellow, and green traffic lights. I used this model to detect redactions, signatures, initials, and dates from a variety of
 documents. Note: When you run this notebook, you will be cloning two other repositories to your local work station, driving-object-detection and 
 Ex_Scripts. 
@@ -25,7 +26,11 @@ The installation is for this Object Detection API is fairly straightforward. Mak
 
 
 ## Instructions for using your own data:
-This notebook uses transfer learning, using models pretrained on the Coco dataset. Most of the significant changes you will make will come after cell 18, which is where you clone the driving-object-detection and Ex_Scripts repositories. For your reference, this is what cell 18 is: 
+This notebook uses transfer learning, using models pretrained on the Coco dataset. 
+Before cloning the driving-object-detection and Ex_Scripts repositories, you will need to decide which model you would like to use. This occurs in cell 5.
+Here is the link for additional Tensorflow Object-Detection Models trained on Coco:
+https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md
+Most of the significant changes you will make will come after cell 18, which is where you clone the driving-object-detection and Ex_Scripts repositories. For your reference, this is what cell 18 is: 
 ```
 # This cell clones all the content from the original driving object detection repository into the repository directory path.
 # It also checks that the label map and pipeline files exist.
