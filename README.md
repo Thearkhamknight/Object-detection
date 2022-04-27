@@ -3,14 +3,14 @@ This Tensorflow Object Detection API is the original creation of Yuki Takahashi,
 it more compatible so it can be run more smoothly. For more information see the end of this README.
 The objective is to use this Object Detection Model to detect objects in different classes within a set of images. For example, Mr. Takahashi trained this 
 model to detect red, yellow, and green traffic lights. I used this model to detect redactions, signatures, initials, and dates from a variety of
-documents. At the end, you will have the train exported model inside the cloned driving-object-detection repository with the name trained_model.tar.gz. 
+documents. Note: When you run this notebook, you will be cloning two other repositories to your local work station, driving-object-detection and Ex_Scripts. At the end, you will have the train exported model inside the cloned driving-object-detection repository with the name trained_model.tar.gz. 
 The evaluation cell, cell 31, will give you precise metrics on how your model performs. It will tell you the Average Precision and Average Recall at 
 at different IOU thresholds and for different sizes of the output bounding boxes. Coco defines a small area as between 0 and 32^2 pixels, medium area as 
 between 32^2 pixels and 96^2 pixels, and large area as between 96^2 pixels and 1e5^2 pixels. (For more information on IOU and Average Precision, check 
 out the links I provide at the end of this README.) Finally, the inference cell will visually show you how well your model performs on your test images.
 The model or detector will output the bounding boxes, the class that each bounding box belongs to, and the detection scores or probabilities for 
 each respective bounding box belonging to its class. This information will be visually superimposed on your test set images so you can verify visually
-how your model performs.
+how your model performs. You will be able to analyze how your model performs both numerically and visually.
 
 
 
@@ -85,8 +85,10 @@ item {
 ```
 Finally, open the pipeline.config file.
 The pipeline.config file is the only file where you will have to specify full absolute paths for your workspace.
-In my workspace the configuration file is under Object-detection/driving-object-detection/models/tf2/my_centernet_resnet50_v1_fpn. The folder after tf2 will depend on what model you choose to train on.
-This is what my pipeline.config file is, and I will specify what changes to make inside the configuration file. After making these changes, make sure to save the pipeline.config file.
+In my workspace the configuration file is under Object-detection/driving-object-detection/models/tf2/my_centernet_resnet50_v1_fpn. The folder after tf2 
+will depend on what model you choose to train on.
+This is what my pipeline.config file is, and I will specify what changes to make inside the configuration file. After making these changes, make sure to 
+save the pipeline.config file.
 
 ```
 # CenterNet meta-architecture from the "Objects as Points" [1] paper
