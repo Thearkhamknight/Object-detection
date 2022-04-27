@@ -1,8 +1,14 @@
 # Object-detection
-This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the github username Yuki678.I merely modified a few scripts to make it more compatible so it can be run more smoothly. For more information see the end of this README.
+This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the github username Yuki678. I merely modified a few scripts to make 
+it more compatible so it can be run more smoothly. For more information see the end of this README.
 The objective is to use this Object Detection Model to detect objects in different classes within a set of images. For example, Mr. Takahashi trained this 
 model to detect red, yellow, and green traffic lights. I used this model to detect redactions, signatures, initials, and dates from a variety of
-documents.
+documents. At the end, you will have the train exported model inside the cloned driving-object-detection repository with the name trained_model.tar.gz. 
+The evaluation cell, cell 31, will give you precise metrics on how your model performs. It will tell you the Average Precision and Average Recall at 
+at different IOU thresholds and for different sizes of the output bounding boxes. Coco defines a small area as between 0 and 32^2 pixels, medium area as 
+between 32^2 pixels and 96^2 pixels, and large area as between 96^2 pixels and 100000^2 pixels. For more information on IOU and Average Precision, check 
+out the links I provide at the end of this README.
+
 
 
 
@@ -45,8 +51,12 @@ assert os.path.isfile(pipeline_fname), '`{}` not exist'.format(pipeline_fname)
 os.makedirs(model_dir, exist_ok=True)
 ```
 
-If you would like to use your own images, then after cloning the driving-object-detection repository, navigate to driving-object-detection/images, delete all the images of traffic lights and the xml files. 
-Upload your own images to driving-object-detection/images. Then label them in the object-detection bounding box format using LabelImg in PASCAL VOC format and upload their respective xml files inside the same directory. Make sure the xml files have the exact same name as the image files, with the exception of the file extension. Ensure that the bounding box xml annotation files are in PASCAL VOC format, as this is necessary for the model to be trained properly. The notebook will partition the images into a training and test set, convert the xml files in each set into a single csv file, and finally convert the csv file into a tf.record file for training and evaluation. 
+To train this model on your own images, after cloning the driving-object-detection repository navigate to driving-object-detection/images, delete all the images of traffic lights and the xml files. 
+Upload your own images to driving-object-detection/images. Then label them in the object-detection bounding box format using LabelImg in PASCAL VOC format 
+and upload their respective xml files inside the same directory. Make sure the xml files have the exact same name as the image files, with the exception 
+of the file extension. Ensure that the bounding box xml annotation files are in PASCAL VOC format, as this is necessary for the model to be trained 
+properly. The notebook will partition the images into a training and test set, convert the xml files in each set into a single csv file, and finally 
+convert the csv file into a tf.record file for training and evaluation. 
 
 Here is a link on how to install LabelImg https://github.com/tzutalin/labelImg#installation.
 
@@ -120,7 +130,7 @@ model {
 
 train_config: {
 
-  batch_size: 16
+  batch_size: 16 #
   num_steps: 10000
 
   data_augmentation_options {
@@ -213,7 +223,10 @@ eval_input_reader: {
 Credit to Yuki Takahashi:
 The original README file created by Mr. Takahashi is in driving-object-detection.
 Also inside Mr. Takahashi's driving-object-detection repository is a requirements text file and a setup environment script 'setup_env.sh'.
- Many of the scripts used to run this notebook are copyrighted by the Tensorflow authors and licensed under the Apache License, Version 2.0 (the "License").
+ Many of the scripts used to run this notebook are copyrighted by the Tensorflow authors and licensed under the Apache License, Version 2.0 (the 
+ "License").
 A copy of the license can be obtained at 
 http://www.apache.org/licenses/LICENSE-2.0
-
+Links for Average Precision and IOU:
+https://towardsdatascience.com/breaking-down-mean-average-precision-map-ae462f623a52
+https://towardsdatascience.com/map-mean-average-precision-might-confuse-you-5956f1bfa9e2#:~:text=The%20mean%20Average%20Precision%20or,an%20IoU%20threshold%20of%200.5.
