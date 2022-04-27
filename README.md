@@ -200,7 +200,8 @@ train_config: {
     }
     use_moving_average: false
   }
-  max_number_of_boxes: 3 # This will have to match the maximum number of bounding boxes identified in a single image within the your entire image set. For example, if you identified that the maximum number of bounding boxes is 20, change this value to 20.
+  max_number_of_boxes: 3 # This will have to match the maximum number of bounding boxes identified in a single image within the your entire image set. 
+  #For example, if you identified that the maximum number of bounding boxes is 20, change this value to 20.
   unpad_groundtruth_tensors: false
 
   fine_tune_checkpoint_version: V2 # In fine_tune_checkpoint below, specify the full checkpoint file path. 
@@ -210,9 +211,11 @@ train_config: {
 }
 
 train_input_reader: {
-  label_map_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/label_map.pbtxt" #Specify the full file path. Change preceding directories before Object-detection.
+  label_map_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/label_map.pbtxt" #Specify the full file path. 
+  #Change preceding directories before Object-detection.
   tf_record_input_reader {
-    input_path:  "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/train.record" #Specify the full file path. Change preceding directories before Object-detection.
+    input_path:  "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/train.record" #Specify the full file path. 
+    #Change preceding directories before Object-detection.
   }
 }
 
