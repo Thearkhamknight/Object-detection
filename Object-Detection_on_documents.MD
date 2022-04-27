@@ -10,5 +10,5 @@ I will also specify the few changes I made to the original version. The cell num
 I added two new cells after cell 18. The first cell, cell 19 removes the images and annotations subdirectories inside driving-object-detection because you will not need them. Cell 20 extracts the images and train zip files to driving-object-detection/Images/ and
 driving-object-detection/Images/train/ respectively. Absolute file paths are necessary here so you will need to specify them, all you have to do is change 
 the preceding directories before Object-detection. Finally, cells 22 and 23, the two cells after printing the pipeline.config document are commented out. 
-This is because the document data is already partitioned into a training and a test set and because the data is already in csv format. Keep these cells 
+This is because the document data is already partitioned into a training and a test set and the data is already in csv format. Keep these cells 
 commented. Everything else can be kept the same and should run smoothly.
