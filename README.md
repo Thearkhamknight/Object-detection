@@ -6,8 +6,11 @@ model to detect red, yellow, and green traffic lights. I used this model to dete
 documents. At the end, you will have the train exported model inside the cloned driving-object-detection repository with the name trained_model.tar.gz. 
 The evaluation cell, cell 31, will give you precise metrics on how your model performs. It will tell you the Average Precision and Average Recall at 
 at different IOU thresholds and for different sizes of the output bounding boxes. Coco defines a small area as between 0 and 32^2 pixels, medium area as 
-between 32^2 pixels and 96^2 pixels, and large area as between 96^2 pixels and 100000^2 pixels. For more information on IOU and Average Precision, check 
-out the links I provide at the end of this README.
+between 32^2 pixels and 96^2 pixels, and large area as between 96^2 pixels and 1e5^2 pixels. (For more information on IOU and Average Precision, check 
+out the links I provide at the end of this README.) Finally, the inference cell will visually show you how well your model performs on your test images.
+The model or detector will output the bounding boxes, the class that each bounding box belongs to, and the detection scores or probabilities for 
+each respective bounding box belonging to its class. This information will be visually superimposed on your test set images so you can verify visually
+how your model performs.
 
 
 
@@ -16,7 +19,7 @@ out the links I provide at the end of this README.
 The installation is for this Object Detection API is fairly straightforward. Make sure you have Python and Jupyter Notebook installed in your work space in order to run this notebook. This Object Detection notebook will also clone the driving-object-detection and Ex_Scripts repositories to your work space so ensure that you have enough memory. One thing I would like to note is that some of the terminal commands are specific to the Debian OS, therefore you will have to change some of them to fit your OS. After cloning the driving-object-detection repository, open the README.MD file within that repository for more information on how to add additional models, convert the exported model to earlier versions of Tensorflow, and increase inference speed.
 
 
-## Instructions:
+## Instructions for using your own data:
 This notebook uses transfer learning, using models pretrained on the Coco dataset. Most of the significant changes you will make will come after cell 18, which is where you clone the driving-object-detection and Ex_Scripts repositories. For your reference, this is what cell 18 is: 
 ```
 # This cell clones all the content from the original driving object detection repository into the repository directory path.
@@ -51,7 +54,8 @@ assert os.path.isfile(pipeline_fname), '`{}` not exist'.format(pipeline_fname)
 os.makedirs(model_dir, exist_ok=True)
 ```
 
-To train this model on your own images, after cloning the driving-object-detection repository navigate to driving-object-detection/images, delete all the images of traffic lights and the xml files. 
+To train this model on your own images, after cloning the driving-object-detection repository navigate to driving-object-detection/images and 
+delete all the images of traffic lights and the xml files. 
 Upload your own images to driving-object-detection/images. Then label them in the object-detection bounding box format using LabelImg in PASCAL VOC format 
 and upload their respective xml files inside the same directory. Make sure the xml files have the exact same name as the image files, with the exception 
 of the file extension. Ensure that the bounding box xml annotation files are in PASCAL VOC format, as this is necessary for the model to be trained 
