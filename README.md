@@ -1,5 +1,5 @@
 # Object-detection
-This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the github username Yuki678. I merely modified a few scripts to make 
+This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the GitHub username Yuki678. I merely modified a few scripts to make 
 it more compatible so it can be run more smoothly. For further credit to Mr. Takahashi, see the end of this README.
 The objective is, using models pretrained on the Coco Dataset, to use transfer learning with Tensorflow's Object Detection API to train a selected model 
 to detect objects in different classes within a set of images. For example, Mr. Takahashi trained this 
