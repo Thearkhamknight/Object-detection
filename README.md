@@ -69,7 +69,7 @@ os.makedirs(model_dir, exist_ok=True)
 
 To train this model on your own images, after cloning the driving-object-detection repository navigate to driving-object-detection/images and 
 delete all the images of traffic lights and the xml files. 
-Upload your own images to driving-object-detection/images. Then label them in the object-detection bounding box format using LabelImg in PASCAL VOC format 
+Upload your own images to driving-object-detection/images. Then label the bounding boxes of the objects using LabelImg in PASCAL VOC format 
 and upload their respective xml files inside the same directory. Make sure the xml files have the exact same name as the image files, with the exception 
 of the file extension. Ensure that the bounding box xml annotation files are in PASCAL VOC format, as this is necessary for the model to be trained 
 properly. The notebook will partition the images into a training and test set, convert the xml files in each set into a single csv file, and finally 
@@ -209,21 +209,21 @@ train_config: {
     use_moving_average: false
   }
   max_number_of_boxes: 3 # This will have to match the maximum number of bounding boxes identified in a single image within the your entire image set. 
-  #For example, if you identified that the maximum number of bounding boxes is 20, change this value to 20.
+  # For example, if you identified that the maximum number of bounding boxes is 20, change this value to 20.
   unpad_groundtruth_tensors: false
 
   fine_tune_checkpoint_version: V2 # In fine_tune_checkpoint below, specify the full checkpoint file path. 
   # Object-detection/models/research/pretrained_model/checkpoint/ckpt-0 should stay the same but include any preceding directories.
-  fine_tune_checkpoint: "/home/faizan_samad/testing/Object-detection/models/research/pretrained_model/checkpoint/ckpt-0" #Specify the full file path.
-  fine_tune_checkpoint_type: "detection" #Make sure the checkpoint type is detection
+  fine_tune_checkpoint: "/home/faizan_samad/testing/Object-detection/models/research/pretrained_model/checkpoint/ckpt-0" # Specify the full file path.
+  fine_tune_checkpoint_type: "detection" # Make sure the checkpoint type is detection
 }
 
 train_input_reader: {
-  label_map_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/label_map.pbtxt" #Specify the full file path. 
-  #Change preceding directories before Object-detection.
+  label_map_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/label_map.pbtxt" # Specify the full file path. 
+  # Change preceding directories before Object-detection.
   tf_record_input_reader {
-    input_path:  "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/train.record" #Specify the full file path. 
-    #Change preceding directories before Object-detection.
+    input_path:  "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/train.record" # Specify the full file path. 
+    # Change preceding directories before Object-detection.
   }
 }
 
@@ -234,13 +234,13 @@ eval_config: {
 }
 
 eval_input_reader: {
-  label_map_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/label_map.pbtxt" #Specify the full file path. 
-  #Change preceding directories before Object-detection.
+  label_map_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/label_map.pbtxt" # Specify the full file path. 
+  # Change preceding directories before Object-detection.
   shuffle: false
   num_epochs: 1
   tf_record_input_reader {
-    input_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/test.record" #Specify the full file path. 
-    #Change preceding directories before Object-detection.
+    input_path: "/home/faizan_samad/testing/Object-detection/driving-object-detection/annotations/test.record" # Specify the full file path. 
+    # Change preceding directories before Object-detection.
   }
 }
 ```
