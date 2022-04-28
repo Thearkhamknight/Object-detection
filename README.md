@@ -24,7 +24,7 @@ both numerically and visually.
 
 
 ## Installation:
-The installation is for this Object Detection API is fairly straightforward. Make sure you have Python and Jupyter Notebook installed in your work space in order to run this notebook. This Object Detection notebook will also clone the driving-object-detection and Ex_Scripts repositories to your work space so ensure that you have enough memory. One thing I would like to note is that some of the terminal commands are specific to the Debian OS, therefore you will have to change some of them to fit your OS. After cloning the driving-object-detection repository, open the README.MD file within that repository for more information on how to add additional models, convert the exported model to earlier versions of Tensorflow, and increase inference speed. I have also included Mr. Takahashi's original README.md file in this repository as README_V2.MD so you can access it from this repository as well.
+The installation is for this Object Detection API is fairly straightforward. Make sure you have Python and Jupyter Notebook installed in your work space in order to run this notebook. This Object Detection notebook will also clone the driving-object-detection and Ex_Scripts repositories to your work space so ensure that you have enough memory. One thing I would like to note is that some of the terminal commands are specific to the Debian OS, therefore you will have to change some of them to fit your OS (For example on a Mac OS you will have to change apt-get install to brew install). After cloning the driving-object-detection repository, open the README.MD file within that repository for more information on how to add additional models, convert the exported model to earlier versions of Tensorflow, and increase inference speed. I have also included Mr. Takahashi's original README.md file in this repository as README_V2.MD so you can access it from this repository as well.
 
 
 ## Instructions for using your own data:
@@ -45,7 +45,7 @@ Most of the significant changes you will make will come after cell 18, which is 
 
 # Instead of !git clone {repo_url} type the command:
 # !git clone https://<Username>:<Password>@github.com/yuki678/driving-object-detection.git
-# Change the directory to fit your workspace.
+# Change the directory to fit your work space.
 import os
 %cd ./
 # Clean up
@@ -97,8 +97,8 @@ item {
 }
 ```
 Finally, open the pipeline.config file.
-The pipeline.config file is the only file where you will have to specify full absolute paths for your workspace.
-In my workspace the configuration file is under Object-detection/driving-object-detection/models/tf2/my_centernet_resnet50_v1_fpn. The folder after tf2 
+The pipeline.config file is the only file where you will have to specify full absolute paths for your work space.
+In my work space the configuration file is under Object-detection/driving-object-detection/models/tf2/my_centernet_resnet50_v1_fpn. The folder after tf2 
 will depend on what model you choose to train on.
 This is what my pipeline.config file is, and I will specify what changes to make inside the configuration file. After making these changes, make sure to 
 save the pipeline.config file.
@@ -245,10 +245,10 @@ eval_input_reader: {
 }
 ```
 ## Credit to Yuki Takahashi:
-
-The original README file created by Mr. Takahashi is in driving-object-detection.
+As I stated before, the driving-object-detection repository and the notebooks in this repository are the original creation of Yuki Takahashi, all credit
+goes to him. The original README file created by Mr. Takahashi is in driving-object-detection.
 Also inside Mr. Takahashi's driving-object-detection repository is a requirements text file and a setup environment script 'setup_env.sh'.
- Many of the scripts used to run this notebook are copyrighted by the Tensorflow authors and licensed under the Apache License, Version 2.0 (the 
+Many of the scripts used to run this notebook are copyrighted by the Tensorflow authors and licensed under the Apache License, Version 2.0 (the 
  "License").
 A copy of the license can be obtained at 
 http://www.apache.org/licenses/LICENSE-2.0
