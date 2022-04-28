@@ -6,10 +6,10 @@ to detect objects in different classes within a set of images. For example, Mr. 
 model to detect red, yellow, and green traffic lights. I used this model to detect redactions, signatures, initials, and dates from a variety of
 documents. If you would like to see how this performed with my data, I included it as a binary asset in the release of this repository with this link:
 https://github.com/Thearkhamknight/Object-detection/releases/tag/v0.0-alpha . The name of the file is TF_exec_doc_inference.nbconvert.ipynb.
-Note: When you run this notebook, you will be cloning two other repositories to your local work station, driving-object-detection and 
+Note: When you run this notebook, you will be cloning two other repositories to your local work space, driving-object-detection and 
 Ex_Scripts. 
 
-At the end, you will have the trained model exported inside the cloned driving-object-detection repository with the name trained_model.tar.gz. 
+When this notebook is finished running, you will have the trained model exported inside your local driving-object-detection repository with the name trained_model.tar.gz . 
 The evaluation cell, cell 31, will give you precise metrics on how your model performs. It will tell you the Average Precision and Average Recall 
 at different IOU thresholds and for different sizes of the output bounding boxes. Coco defines a small area as between 0 and 32^2 pixels, medium area as 
 between 32^2 pixels and 96^2 pixels, and large area as between 96^2 pixels and 1e5^2 pixels. (For more information on IOU and Average Precision, check 
@@ -37,7 +37,7 @@ Most of the significant changes you will make will come after cell 18, which is 
 ```
 # This cell clones all the content from the original driving object detection repository into the repository directory path.
 # It also checks that the label map and pipeline files exist.
-# I added the line: os.makedirs(model_dir, exist_ok=True). after cloning  and pulling the repositories. 
+# I added the line: os.makedirs(model_dir, exist_ok=True) after cloning  and pulling the repositories. 
 # This ensures that a training sub folder will be created.
 # The original clone command is !git clone {repo_url}
 # Since the repository is public you will not be prompted to give your github username and password.
