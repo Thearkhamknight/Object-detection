@@ -6,6 +6,7 @@ to the document data inside my cloned driving-object-detection repository are ti
 however I was not able to provide the images and training set because of file size upload constraints on neither the Github repository nor as a binary asset in the release (both the training set and the entire image set are well over 1000 images). 
 
 However, I will provide a link for both the entire set of images and the training set as zip files that you can access through Google Drive.
+Here is the link for both of the zip files : https://drive.google.com/drive/folders/1YSoObzOqhNoJYP6NuV2Cy82QzEHXVZH-?usp=sharing .
 I will also specify the few changes I made to the original version. The cell numbers I use here correspond to TF_exec_doc_inference.nbconvert.ipynb.
 I added two new cells after cell 18. The first cell, cell 19 removes the images and annotations subdirectories inside driving-object-detection because you will not need them. Cell 20 extracts the images and train zip files to driving-object-detection/Images/ and
 driving-object-detection/Images/train/ respectively. Absolute file paths are necessary here so you will need to specify them, all you have to do is change 
