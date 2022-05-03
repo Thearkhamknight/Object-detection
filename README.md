@@ -1,41 +1,29 @@
 # Object-detection
-The objective of using this object detection notebook is, using models pretrained on the Coco Dataset, to use transfer learning with Tensorflow's Object Detection API to train a selected model to detect objects in different classes within a set of images. In the original version of this notebook the model 
-was trained to detect red, yellow, and green traffic lights. I trained and used this model to detect redactions, signatures, initials, and dates from a variety of documents. When you run this notebook, you will be cloning two other repositories to your local work space, driving-object-detection and 
-Ex_Scripts. 
+The objective of using this object detection notebook is, using models pretrained on the Coco Dataset, to use transfer learning with Tensorflow's Object 
+Detection API to train a selected model to detect objects in different classes within a set of images. In the original version of this notebook, the model 
+was trained to detect red, yellow, and green traffic lights. I trained and used this model to detect redactions, signatures, initials, and dates from a 
+variety of documents. When you run this notebook, you will be cloning two other repositories to your local work space, driving-object-detection and 
+Ex_Scripts. After this notebook is finished running, you will have the trained model exported inside your local driving-object-detection repository with 
+the name trained_model.tar.gz as well as metrics on how your model performs. 
 
 
 This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the GitHub username Yuki678. I merely modified a few scripts to make 
-it more compatible so it can be run more smoothly. For further credit to Mr. Takahashi, see the end of this README.
-The objective is, using models pretrained on the Coco Dataset, to use transfer learning with Tensorflow's Object Detection API to train a selected model 
-to detect objects in different classes within a set of images. For example, Mr. Takahashi trained this 
-model to detect red, yellow, and green traffic lights. I used this model to detect redactions, signatures, initials, and dates from a variety of
-documents. If you would like to see how this performed with my data, I included it as a binary asset in the release of this repository with this link:
-https://github.com/Thearkhamknight/Object-detection/releases/tag/v0.0-alpha . The name of the file is TF_exec_doc_inference.nbconvert.ipynb.
-Note: When you run this notebook, you will be cloning two other repositories to your local work space, driving-object-detection and 
-Ex_Scripts. 
-
-When this notebook is finished running, you will have the trained model exported inside your local driving-object-detection repository with the name trained_model.tar.gz . 
-The evaluation cell, cell 31, will give you precise metrics on how your model performs. It will tell you the Average Precision and Average Recall 
-at different IOU thresholds and for different sizes of the output bounding boxes. Coco defines a small area as between 0 and 32^2 pixels, medium area as 
-between 32^2 pixels and 96^2 pixels, and large area as between 96^2 pixels and 1e5^2 pixels. (For more information on IOU and Average Precision, check 
-out the links I provide at the end of this README.) Finally, the inference cell, which is the last cell, will visually show you how well your model 
-performs on your test images.
-The model or detector will output the bounding boxes, the class that each bounding box belongs to, and the detection scores or probabilities for 
-each respective bounding box belonging to its class. This information will be visually superimposed on your test set images so you can verify visually
-how your model performs. With the information provided by both the evaluation and inference cells, you will be able to analyze how your model performs 
-both numerically and visually.
-
-
+it more compatible so it can be run more smoothly. For credits and licensing information, see the end of this README.
 
 
 ## Installation:
-The installation is for this Object Detection notebook is fairly straightforward. Make sure you have Python and Jupyter Notebook installed in your work space in order to run this notebook. This Object Detection notebook will also clone the driving-object-detection and Ex_Scripts repositories to your work space so ensure that you have enough memory. One thing I would like to note is that some of the terminal commands are specific to the Debian OS, therefore you will have to change some of them to fit your OS (For example on a Mac OS you will have to change apt-get install to brew install). After cloning the driving-object-detection repository, open the README.MD file within that repository for more information on how to add additional models, convert the exported model to earlier versions of Tensorflow, and increase inference speed. I have also included Mr. Takahashi's original README.MD file in this repository as README_V2.MD so you can access it from this repository as well.
+The installation is for this Object Detection notebook is fairly straightforward. Make sure you have Python and Jupyter Notebook installed in your work 
+space in order to run this notebook. This Object Detection notebook will also clone the driving-object-detection and Ex_Scripts repositories to your work 
+space so ensure that you have enough memory. One thing I would like to note is that some of the terminal commands are specific to the Debian OS. 
 
 
 ## Instructions for using your own data:
 This notebook uses transfer learning, using models pretrained on the Coco dataset. 
-Before cloning the driving-object-detection and Ex_Scripts repositories, you will need to decide which model you would like to use. This occurs in cell 5.
-Here is the link for additional Tensorflow Object-Detection Models trained on Coco:
+Before cloning the driving-object-detection and Ex_Scripts repositories, you will need to decide which model you would like to use. This occurs in cell 5. 
+You can choose from four models: ssd_mobilenet_v2_320x320_coco17_tpu-8, ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8, 
+centernet_resnet50_v1_fpn_512x512_coco17_tpu-8, and centernet_resnet101_v1_fpn_512x512_coco17_tpu-8. You should consider the scope and goal of your 
+project, hardware constraints, and speed-accuracy tradeoff when deciding which model to use. To see more models trained on Coco and to examine the 
+speed-accuracy tradeoff for each model, see this link:
 https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md
 
 Most of the significant changes you will make will come after cell 18, which is where you clone the driving-object-detection and Ex_Scripts repositories. For your reference, this is what cell 18 is: 
@@ -73,12 +61,11 @@ os.makedirs(model_dir, exist_ok=True)
 ```
 
 To train this model on your own images, after cloning the driving-object-detection repository navigate to driving-object-detection/images and 
-delete all the images of traffic lights and the xml files. 
-Upload your own images to driving-object-detection/images. Then label the bounding boxes of the objects using LabelImg in PASCAL VOC format 
-and upload their respective xml files inside the same directory. Make sure the xml files have the exact same name as the image files, with the exception 
-of the file extension. Ensure that the bounding box xml annotation files are in PASCAL VOC format, as this is necessary for the model to be trained 
-properly. The notebook will partition the images into a training and test set, convert the xml files in each set into a single csv file, and finally 
-convert the csv file into a tf.record file for training and evaluation. 
+delete all the images of traffic lights and the xml files.  Upload your own images to driving-object-detection/images. Then label the bounding boxes of 
+the objects using LabelImg in PASCAL VOC format and upload their respective xml files inside the same directory. Make sure the xml files have the exact 
+same name as the image files, with the exception of the file extension. Ensure that the bounding box xml annotation files are in PASCAL VOC format, as 
+this is necessary for the model to be trained properly. The notebook will partition the images into a training and test set, convert the xml files in each 
+set into a single csv file, and finally convert the csv file into a tf.record file for training and evaluation. 
 
 Here is a link on how to install LabelImg https://github.com/tzutalin/labelImg#installation.
 
@@ -103,10 +90,9 @@ item {
 ```
 Finally, open the pipeline.config file.
 The pipeline.config file is the only file where you will have to specify full absolute paths for your work space.
-In my work space the configuration file is under Object-detection/driving-object-detection/models/tf2/my_centernet_resnet50_v1_fpn. The folder after tf2 
-will depend on what model you choose to train on.
-This is what my pipeline.config file is, and I will specify what changes to make inside the configuration file. After making these changes, make sure to 
-save the pipeline.config file.
+In my work space the configuration file is inside Object-detection/driving-object-detection/models/tf2/my_centernet_resnet50_v1_fpn. The folder after tf2 
+will depend on what model you choose to train on. This is what the pipeline.config file looks like for my work space, and I will specify what changes to 
+make inside the configuration file. After making these changes, make sure to save the pipeline.config file.
 
 ```
 # CenterNet meta-architecture from the "Objects as Points" [1] paper
@@ -118,7 +104,7 @@ save the pipeline.config file.
 
 model {
   center_net {
-    num_classes: 3 #Change this to the same number of classes as label_map.pbtxt
+    num_classes: 3 # Change this to the same number of classes as label_map.pbtxt
     feature_extractor {
       type: "resnet_v1_50_fpn"
     }
@@ -249,14 +235,22 @@ eval_input_reader: {
   }
 }
 ```
-## Credit to Yuki Takahashi:
-As I stated before, the driving-object-detection repository and the notebooks in this repository are the original creation of Yuki Takahashi, all credit
-goes to him. The original README file created by Mr. Takahashi is in driving-object-detection.
-Also inside Mr. Takahashi's driving-object-detection repository is a requirements text file and a setup environment script 'setup_env.sh'.
-Many of the scripts used to run this notebook are copyrighted by the Tensorflow authors and licensed under the Apache License, Version 2.0 (the 
- "License").
-A copy of the license can be obtained at 
-http://www.apache.org/licenses/LICENSE-2.0
+As I stated before, you will have the trained model exported inside your local driving-object-detection repository with the name trained_model.tar.gz . 
+The evaluation cell, cell 31, will give you precise metrics on how your model performs. It will tell you the Average Precision and Average Recall 
+at different IOU thresholds and for different sizes of the output bounding boxes. (For more information on IOU and Average Precision, check 
+out the links I provide at the end of this README.) Finally, the inference cell, which is the last cell, will visually show you how well your model 
+performs on your test images. The model or detector will output the bounding boxes, the class that each bounding box belongs to, and the detection scores 
+or probabilities for each respective bounding box belonging to its class. This information will be visually superimposed on your test set images so you 
+can verify visually how your model performs. With the information provided by both the evaluation and inference cells, you will be able to analyze how 
+your model performs both numerically and visually. If you would like to see how this performed with the document dataset, I included it as a binary asset in the 
+release of this repository with this link:
+https://github.com/Thearkhamknight/Object-detection/releases/tag/v0.0-alpha . The name of the file is TF_exec_doc_inference.nbconvert.ipynb. To access the document dataset read the Object-Detection_on_documents.MD in this repository.
+
+
+## Credits:
+The driving-object-detection repository and the notebooks in this repository are the original creation of Yuki Takahashi, all credit
+goes to him. Many of the scripts used to run this notebook are copyrighted by the Tensorflow authors and licensed under the Apache License, Version 2.0 
+(the "License"). A copy of the license can be obtained at http://www.apache.org/licenses/LICENSE-2.0 .
 
 
 ## Links for Average Precision and IOU:
