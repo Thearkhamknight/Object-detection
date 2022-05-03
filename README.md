@@ -242,7 +242,9 @@ out the links I provide at the end of this README.) Finally, the inference cell,
 performs on your test images. The model or detector will output the bounding boxes, the class that each bounding box belongs to, and the detection scores 
 or probabilities for each respective bounding box belonging to its class. This information will be visually superimposed on your test set images so you 
 can verify visually how your model performs. With the information provided by both the evaluation and inference cells, you will be able to analyze how 
-your model performs both numerically and visually. If you would like to see how this performed with the document dataset, I included it as a binary asset in the 
+your model performs both numerically and visually. 
+
+If you would like to see how this performed with the document dataset, I included it as a binary asset in the 
 release of this repository with this link:
 https://github.com/Thearkhamknight/Object-detection/releases/tag/v0.0-alpha . The name of the file is TF_exec_doc_inference.nbconvert.ipynb. To access the document dataset read the Object-Detection_on_documents.MD file in this repository.
 
