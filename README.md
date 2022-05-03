@@ -1,4 +1,9 @@
 # Object-detection
+The objective of using this object detection notebook is, using models pretrained on the Coco Dataset, to use transfer learning with Tensorflow's Object Detection API to train a selected model to detect objects in different classes within a set of images. In the original version of this notebook the model 
+was trained to detect red, yellow, and green traffic lights. I trained and used this model to detect redactions, signatures, initials, and dates from a variety of documents. When you run this notebook, you will be cloning two other repositories to your local work space, driving-object-detection and 
+Ex_Scripts. 
+
+
 This Tensorflow Object Detection API is the original creation of Yuki Takahashi, with the GitHub username Yuki678. I merely modified a few scripts to make 
 it more compatible so it can be run more smoothly. For further credit to Mr. Takahashi, see the end of this README.
 The objective is, using models pretrained on the Coco Dataset, to use transfer learning with Tensorflow's Object Detection API to train a selected model 
